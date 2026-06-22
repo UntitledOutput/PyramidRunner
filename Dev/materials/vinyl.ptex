@@ -1,0 +1,510 @@
+{
+	"connections": [
+		{
+			"from": "normal_map2",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 4
+		},
+		{
+			"from": "shard_fbm",
+			"from_port": 0,
+			"to": "math",
+			"to_port": 0
+		},
+		{
+			"from": "clouds_noise",
+			"from_port": 0,
+			"to": "math",
+			"to_port": 1
+		},
+		{
+			"from": "math",
+			"from_port": 0,
+			"to": "math_2",
+			"to_port": 0
+		},
+		{
+			"from": "math_2",
+			"from_port": 0,
+			"to": "math_3",
+			"to_port": 0
+		},
+		{
+			"from": "math_3",
+			"from_port": 0,
+			"to": "normal_map2",
+			"to_port": 0
+		},
+		{
+			"from": "math_4",
+			"from_port": 0,
+			"to": "math_3",
+			"to_port": 1
+		},
+		{
+			"from": "math_5",
+			"from_port": 0,
+			"to": "math_4",
+			"to_port": 0
+		},
+		{
+			"from": "weave2",
+			"from_port": 0,
+			"to": "math_5",
+			"to_port": 1
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "@Node@817",
+	"node_position": {
+		"x": 0.0,
+		"y": 0.0
+	},
+	"nodes": [
+		{
+			"export_paths": {
+
+			},
+			"name": "Material",
+			"node_position": {
+				"x": -32.7272834777832,
+				"y": 7.27272939682007
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1.0,
+					"b": 0.0,
+					"g": 0.0,
+					"r": 1.0,
+					"type": "Color"
+				},
+				"ao": 1.0,
+				"depth_scale": 0.5,
+				"emission_energy": 1.0,
+				"flags_transparent": true,
+				"metallic": 1.0,
+				"normal": 1.0,
+				"roughness": 0.68,
+				"size": 11,
+				"sss": 1.0
+			},
+			"seed_int": 0,
+			"type": "material"
+		},
+		{
+			"name": "clouds_noise",
+			"node_position": {
+				"x": -1451.275390625,
+				"y": -51.9049682617188
+			},
+			"parameters": {
+				"n_scale": 8.0,
+				"param0": 11.0,
+				"param1": 0
+			},
+			"seed_int": 0,
+			"type": "clouds_noise"
+		},
+		{
+			"name": "normal_map2",
+			"node_position": {
+				"x": -271.214874267578,
+				"y": 119.057861328125
+			},
+			"parameters": {
+				"buffer": 1.0,
+				"param2": 0.0,
+				"size": 10.0,
+				"strength": 0.025
+			},
+			"seed_int": 0,
+			"type": "normal_map2"
+		},
+		{
+			"name": "shard_fbm",
+			"node_position": {
+				"x": -1590.80200195312,
+				"y": -229.519561767578
+			},
+			"parameters": {
+				"folds": 0.0,
+				"iter": 4.0,
+				"off": 0.0,
+				"per": 0.5,
+				"sharp": 0.7,
+				"sx": 5.0,
+				"sy": 5.0
+			},
+			"seed_int": 0,
+			"type": "shard_fbm"
+		},
+		{
+			"name": "math",
+			"node_position": {
+				"x": -1233.77709960938,
+				"y": -204.801315307617
+			},
+			"parameters": {
+				"clamp": true,
+				"default_in1": 0.0,
+				"default_in2": 0.0,
+				"op": 24
+			},
+			"seed_int": 0,
+			"type": "math"
+		},
+		{
+			"name": "math_2",
+			"node_position": {
+				"x": -945.957092285156,
+				"y": -162.930816650391
+			},
+			"parameters": {
+				"clamp": true,
+				"default_in1": 0.0,
+				"default_in2": 1.0,
+				"op": 6
+			},
+			"seed_int": 0,
+			"type": "math"
+		},
+		{
+			"name": "math_3",
+			"node_position": {
+				"x": -633.175842285156,
+				"y": -111.060173034668
+			},
+			"parameters": {
+				"clamp": false,
+				"default_in1": 0.0,
+				"default_in2": 0.0,
+				"op": 2
+			},
+			"seed_int": 0,
+			"type": "math"
+		},
+		{
+			"connections": [
+				{
+					"from": "pattern",
+					"from_port": 0,
+					"to": "blend",
+					"to_port": 0
+				},
+				{
+					"from": "transform",
+					"from_port": 0,
+					"to": "blend",
+					"to_port": 1
+				},
+				{
+					"from": "pattern_2",
+					"from_port": 0,
+					"to": "colorize",
+					"to_port": 0
+				},
+				{
+					"from": "colorize",
+					"from_port": 0,
+					"to": "transform",
+					"to_port": 0
+				},
+				{
+					"from": "bricks",
+					"from_port": 1,
+					"to": "transform",
+					"to_port": 1
+				},
+				{
+					"from": "blend",
+					"from_port": 0,
+					"to": "gen_outputs",
+					"to_port": 0
+				}
+			],
+			"label": "Fibers",
+			"longdesc": "",
+			"name": "graph_4",
+			"node_position": {
+				"x": -993.176025390625,
+				"y": 18.4126110076904
+			},
+			"nodes": [
+				{
+					"name": "transform",
+					"node_position": {
+						"x": -422.795074462891,
+						"y": 104.5
+					},
+					"parameters": {
+						"repeat": true,
+						"rotate": 30.125,
+						"scale_x": 0.5,
+						"scale_y": 1.0,
+						"translate_x": 0.975,
+						"translate_y": 0.0
+					},
+					"seed": -19826.0,
+					"type": "transform"
+				},
+				{
+					"name": "colorize",
+					"node_position": {
+						"x": -396.795074462891,
+						"y": 44.5
+					},
+					"parameters": {
+						"gradient": {
+							"interpolation": 1,
+							"points": [
+								{
+									"a": 1.0,
+									"b": 0.4375,
+									"g": 0.4375,
+									"pos": 0.0,
+									"r": 0.4375
+								},
+								{
+									"a": 1.0,
+									"b": 1.0,
+									"g": 1.0,
+									"pos": 1.0,
+									"r": 1.0
+								}
+							],
+							"type": "Gradient"
+						}
+					},
+					"seed": -9184.0,
+					"type": "colorize"
+				},
+				{
+					"name": "bricks",
+					"node_position": {
+						"x": -674.752563476562,
+						"y": 17.5
+					},
+					"parameters": {
+						"bevel": 0.1,
+						"columns": 4.0,
+						"corner": 0.0,
+						"mortar": 0.1,
+						"pattern": 0.0,
+						"repeat": 1.0,
+						"round": 0.0,
+						"row_offset": 0.5,
+						"rows": 1.0
+					},
+					"seed": -61325.0,
+					"type": "bricks"
+				},
+				{
+					"name": "pattern_2",
+					"node_position": {
+						"x": -435.795074462891,
+						"y": -53.5
+					},
+					"parameters": {
+						"mix": 0.0,
+						"x_scale": 4.0,
+						"x_wave": 0.0,
+						"y_scale": 4.0,
+						"y_wave": 4.0
+					},
+					"seed": 57752.0,
+					"type": "pattern"
+				},
+				{
+					"name": "blend",
+					"node_position": {
+						"x": -142.795074462891,
+						"y": 11.5
+					},
+					"parameters": {
+						"amount": 1.0,
+						"blend_type": 2.0
+					},
+					"seed": -17211.0,
+					"type": "blend"
+				},
+				{
+					"name": "pattern",
+					"node_position": {
+						"x": -435.795074462891,
+						"y": -154.5
+					},
+					"parameters": {
+						"mix": 0.0,
+						"x_scale": 4.0,
+						"x_wave": 0.0,
+						"y_scale": 4.0,
+						"y_wave": 4.0
+					},
+					"seed": 57653.0,
+					"type": "pattern"
+				},
+				{
+					"name": "gen_parameters",
+					"node_position": {
+						"x": -429.557495117188,
+						"y": -266.5
+					},
+					"parameters": {
+						"param0": 4.0
+					},
+					"seed": 10235.0,
+					"type": "remote",
+					"widgets": [
+						{
+							"label": "Repeat",
+							"linked_widgets": [
+								{
+									"node": "pattern",
+									"widget": "x_scale"
+								},
+								{
+									"node": "bricks",
+									"widget": "columns"
+								},
+								{
+									"node": "pattern_2",
+									"widget": "x_scale"
+								}
+							],
+							"name": "param0",
+							"type": "linked_control"
+						}
+					]
+				},
+				{
+					"name": "gen_inputs",
+					"node_position": {
+						"x": -974.752563476562,
+						"y": -38.0714302062988
+					},
+					"parameters": {
+
+					},
+					"ports": [],
+					"seed": 26580.0,
+					"type": "ios"
+				},
+				{
+					"name": "gen_outputs",
+					"node_position": {
+						"x": 157.204925537109,
+						"y": -38.0714302062988
+					},
+					"parameters": {
+
+					},
+					"ports": [
+						{
+							"name": "port0",
+							"type": "rgba"
+						}
+					],
+					"seed": -5671.0,
+					"type": "ios"
+				}
+			],
+			"parameters": {
+				"param0": 4.0
+			},
+			"seed_int": 0,
+			"shortdesc": "",
+			"type": "graph"
+		},
+		{
+			"name": "weave_random",
+			"node_position": {
+				"x": -1178.70544433594,
+				"y": 106.367095947266
+			},
+			"parameters": {
+				"random": 0.0,
+				"scale_x": 16.0,
+				"scale_y": 16.0,
+				"stitch": 1.0,
+				"width_x": 0.5,
+				"width_y": 0.5
+			},
+			"seed_int": 0,
+			"type": "weave_random"
+		},
+		{
+			"name": "math_4",
+			"node_position": {
+				"x": -750.413024902344,
+				"y": 146.249114990234
+			},
+			"parameters": {
+				"clamp": false,
+				"default_in1": 0.0,
+				"default_in2": 0.0,
+				"op": 0.0
+			},
+			"seed_int": 0,
+			"type": "math"
+		},
+		{
+			"name": "weave2",
+			"node_position": {
+				"x": -1118.30529785156,
+				"y": 294.671417236328
+			},
+			"parameters": {
+				"columns": 32.0,
+				"rows": 32.0,
+				"stitch": 3.0,
+				"width_x": 0.5,
+				"width_y": 0.5
+			},
+			"seed_int": 0,
+			"type": "weave2"
+		},
+		{
+			"name": "math_5",
+			"node_position": {
+				"x": -901.102722167969,
+				"y": 317.936401367188
+			},
+			"parameters": {
+				"clamp": false,
+				"default_in1": 0.0,
+				"default_in2": 0.0,
+				"op": 1
+			},
+			"seed_int": 0,
+			"type": "math"
+		},
+		{
+			"name": "bricks3",
+			"node_position": {
+				"x": -1312.39514160156,
+				"y": 331.514038085938
+			},
+			"parameters": {
+				"bevel": 0.05,
+				"columns": 4.0,
+				"corner": 0.3,
+				"mortar": 0.05,
+				"pattern": 5.0,
+				"repeat": 1.0,
+				"round": 0.0,
+				"row_offset": 0.0,
+				"rows": 4.0
+			},
+			"seed_int": 0,
+			"type": "bricks3"
+		}
+	],
+	"parameters": {
+
+	},
+	"seed_int": 0,
+	"shortdesc": "",
+	"type": "graph"
+}

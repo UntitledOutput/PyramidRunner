@@ -1,0 +1,1 @@
+"D:\Programs\Unity6\6000.2.9f1\Editor\Unity.exe" -quit -batchmode -projectPath "D:\Code\UnityRepos\PyramidRunner" -executeMethod AutomatedBuild.PerformBuild -logFile "D:\Code\UnityRepos\PyramidRunner\build_log.txt" -buildTarget WebGL
